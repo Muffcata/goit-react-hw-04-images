@@ -7,7 +7,7 @@ export class Button extends Component {
     const { onClick } = this.props;
     return (
       <button className={style.button} onClick={onClick}>
-        Load more
+        Load moree
       </button>
     );
   }
