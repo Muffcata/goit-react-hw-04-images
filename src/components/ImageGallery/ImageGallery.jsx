@@ -1,26 +1,23 @@
-import { Component } from 'react';
+import { React } from 'react';
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import style from './ImageGallery.module.css';
 import propTypes from 'prop-types';
 
-export class ImageGallery extends Component {
-  render() {
-    const { images, showLargeImage } = this.props;
-    return (
-      <ul className={style.gallery}>
-        {images.map(image => (
-          <ImageGalleryItem
-            key={image.id}
-            src={image.webformatURL}
-            largeImageURL={image.largeImageURL}
-            alt={image.tags}
-            showLargeImage={showLargeImage}
-          />
-        ))}
-      </ul>
-    );
-  }
-}
+export const ImageGallery = props => {
+  return (
+    <ul className={style.gallery}>
+      {props.images.map(image => (
+        <ImageGalleryItem
+          key={image.id}
+          src={image.webformatURL}
+          largeImageURL={image.largeImageURL}
+          alt={image.tags}
+          showLargeImage={props.showLargeImage}
+        />
+      ))}
+    </ul>
+  );
+};
 
 export default ImageGallery;
 
